@@ -20,10 +20,10 @@ For this series we will just be going over HTML and CSS
 
 HTML (Hypertext Markup Language) is a standard that incorporates tags. A tag is meant to show structure. There are quite a few, but some of the most common ones are:
 
-* <p></p>
-* <div></div>
-* <h1></h1>
-* <a></a>
+* `<p></p>`
+* `<div></div>`
+* `<h1></h1>`
+* `<a></a>`
 
 You can see in the above examples that they follow a general format. This is opening bracket "<", the name of the tag "p, h1, div, etc", closing bracket ">". The content would go after what is known as the "opening tag". Once the content is complete, you follow the same pattern, but include a "/" to signify that you are closing the tag. There are some exceptions to this format, but we will cover those later.
 
