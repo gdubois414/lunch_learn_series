@@ -2,6 +2,41 @@
 
 As we venture into this crazy thing called Sketch, I want to make sure that we make the absolute most out of it. Sketch has the ability to mimic some concepts that are well known in the development community, and I want to take those concepts and transform them into how they might work in Sketch.
 
+## Atomic Design
+
+First things first, we need a method of defining how we break down a page into separate chunks.
+
+Atomic design is essentially breaking down a page to it's smallest parts. Here is an example:
+
+```
+Full Page
+|__ Masthead
+   |__ Logo
+   |__ Navigation
+      |__ Top level items
+      |__ Dropdown
+          |__ Repeat
+   |__ Search Field
+      |__ Search Input
+      |__ Search Button
+```
+
+Once we have the base theme for the page/website we should be thinking of things in terms of components - or in Sketch, symbols/text styles.
+
+Atomic design lets us create modular components that can be dropped inside other components/containers. An example would be a form. Your smallest components would be your form elements - inputs, submit button, dropdowns, etc. All those would make up a larger form component/symbol. Now we can not only drop a generic form wherever we want, but also individual form elements.
+
+## BEM Syntax
+
+One way that developers keep their CSS under control is not only by using the above techniques, but also implementing a naming syntax known as BEM. It stands for Block Element Modifier.
+
+Block is the base of the component, the outermost wrapper. An element is a child of the base, and a modifier is a variation of the base. For an example, let's take a look at a button that has an icon inside it.
+
+Our Block would be `.button`. Elements extend the block by appending two underscores to the Block. Our icon might have a class of `.button__icon`, and our text might have a class of `.button__text`.
+
+What if we have a variation of our button that is a little larger? That is where the Modifier comes in. This class name is placed at the same level that the modification is occuring. A Modifier extends be base by appending two dashes to the Block. For an overall larger button our wrapping element class would become `.button .button--large`. If we want just the icon bigger then our icon class becomes `.button__icon .button__icon--large`.
+
+This may seem like a lot of typing, but a little bit of extra work up front will prevent a lot of headaches in the future as a project grows or changes.
+
 ## DRY is one of the most important concepts in development
 
 DRY stands for Don't Repeat Yourself. The guidelines on this vary, some developers will take it to heart and make a specific task repeatable after one instance of copy/pasting, some are a little more lenient. Typically because of the size and short-term development nature of our projects I am a bit more lenient and wait until a second instance of copy/pasting.
@@ -26,37 +61,6 @@ Common use cases for setting a text style
 * Various levels of page or section headers/titles
 * Hero copy - all levels (headline, sub-head, description)
 * Have an intro paragraph that needs to pop? Text style.
-
-## Atomic Design
-
-Atomic design is essentially breaking down a page to it's smallest parts. Here is an example:
-
-Full Page
-|__ Masthead
-   |__ Logo
-   |__ Navigation
-      |__ Top level items
-      |__ Dropdown
-          |__ Repeat
-   |__ Search Field
-      |__ Search Input
-      |__ Search Button
-
-Once we have the base theme for the page/website we should be thinking of things in terms of components - or in Sketch, symbols/text styles.
-
-Atomic design lets us create modular components that can be dropped inside other components/containers. An example would be a form. Your smallest components would be your form elements - inputs, submit button, dropdowns, etc. All those would make up a larger form component/symbol. Now we can not only drop a generic form wherever we want, but also individual form elements.
-
-## BEM Syntax
-
-One way that developers keep their CSS under control is not only by using the above techniques, but also implementing a naming syntax known as BEM. It stands for Block Element Modifier.
-
-Block is the base of the component, the outermost wrapper. An element is a child of the base, and a modifier is a variation of the base. For an example, let's take a look at a button that has an icon inside it.
-
-Our Block would be `.button`. Elements extend the block by appending two underscores to the Block. Our icon might have a class of `.button__icon`, and our text might have a class of `.button__text`.
-
-What if we have a variation of our button that is a little larger? That is where the Modifier comes in. This class name is placed at the same level that the modification is occuring. A Modifier extends be base by appending two dashes to the Block. For an overall larger button our wrapping element class would become `.button .button--large`. If we want just the icon bigger then our icon class becomes `.button__icon .button__icon--large`.
-
-This may seem like a lot of typing, but a little bit of extra work up front will prevent a lot of headaches in the future as a project grows or changes.
 
 ## General Naming Tips
 
